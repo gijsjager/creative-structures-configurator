@@ -1,0 +1,64 @@
+#co-configurator-ui-header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: var(--co-color-gray-300);
+    padding: 15px;
+}
+#co-configurator-breadcrumbs {
+    display: flex;
+    gap: 1px;
+
+    .co-configurator-breadcrumbs-item {
+        width: 20%;
+        cursor: pointer;
+
+        .co-configurator-breadcrumbs-item-label {
+            font-size: 8px;
+            line-height: 1;
+            text-transform: uppercase;
+            color: var(--co-color-gray-400);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .co-configurator-breadcrumbs-item-bar {
+            height: 6px;
+            margin-top: 2px;
+            background: var(--co-color-gray-400);
+            position: relative;
+            overflow: hidden;
+            // active bar
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 6px;
+                width: 0;
+                background: var(--co-color-gray-500);
+                transition: all 450ms ease-out;
+            }
+        }
+
+        &:hover {
+            .co-configurator-breadcrumbs-item-label {
+                color: var(--co-color-gray-500);
+            }
+            .co-configurator-breadcrumbs-item-bar:after {
+                width: 100%;
+            }
+        }
+
+        &.active {
+            .co-configurator-breadcrumbs-item-label {
+                color: var(--co-color-gray-500);
+            }
+            .co-configurator-breadcrumbs-item-bar:after {
+                width: 100%;
+            }
+        }
+    }
+}

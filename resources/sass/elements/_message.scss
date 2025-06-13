@@ -1,0 +1,39 @@
+#co-configurator-message {
+    display: none;
+    padding: 25px;
+
+    h2 {
+        color: var(--co-color-gray-500)
+    }
+
+    #co-configurator-download {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        &:disabled {
+            opacity: .75;
+        }
+
+        .text {
+            display: block;
+        }
+
+        .loading {
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        &.loading {
+            .text {
+                display: none;
+            }
+
+            .loading {
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,0 +1,134 @@
+#co-configurator-parameters {
+    margin-top: -25px;
+    padding: 25px;
+
+    .twikbot-parameter-group {
+        font-size: 14px;
+        background: white;
+        padding: 15px;
+        margin-top: 45px;
+        position: relative;
+
+        // title
+        .twikbot-parameter-group-title {
+            display: flex;
+            gap: 5px;
+            text-transform: uppercase;
+            color: var(--co-color-gray-600);
+            margin: -40px -15px 20px -15px;
+            font-weight: 800;
+        }
+
+        // descriptions
+        .twikbot-description {
+            display: none;
+        }
+
+        // parameters
+        .twikbot-parameter {
+            margin-bottom: 10px;
+
+            // global labels
+            .twikbot-label {
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            // global inputs
+            .twikbot-textbox {
+                width: 100%;
+                outline: none;
+            }
+        }
+
+        // parameter dropdowns
+        .twikbot-parameter-dropdown {
+            .twikbot-dropdown {
+                width: 100%;
+                font-size: 1em;
+            }
+            .twikbot-dropdown-value {
+                display: none;
+            }
+        }
+        // parameter booleans / checkboxes
+        .twikbot-parameter-boolean {
+            display: flex !important;
+            flex-direction: row-reverse;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+
+            .twikbot-label {
+                display: block;
+                width: 100%;
+                line-height: 1.2;
+                margin-bottom: 0;
+            }
+            .twikbot-boolean-input {
+                appearance: none;
+                -webkit-appearance: none;
+                width: 20px;
+                height: 20px;
+                flex-shrink: 0;
+                flex-grow: 0;
+                background: white no-repeat 50% -500% url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB40lEQVRoge2YyytFQRzHf14bG+9HQlKyUsrOlo2FEitZWFL+EDaSjYWFNVEW9hZ2hOtdQspCipIsvB/fX8fkup3H/M4915zTnU99lnfOZ+ZMc+deIovFYrH4Uw034CMcNdwipgbuw68fP+G40SIBHH9Av/Hpkxgz2KWFV7zyg2K8nWrhIXnHK9/hsKFGTzj+iILjlbdmMt2pg8ekH8+uGyl1QXfbpLtHzhFrHOm2iVU8b5tEx0v3fH7Et8JFOAlLIg5nGuBpQGymKVilM3gXvEn74AosjjC+nnK48j3wwWWA5YgmwfEnwviUbvwIfPUZaAkWZRHfCM9CxGttmwlybnhBAy7Awn+K34WVug9w2zZezsMCQXwTPM9lPLMqfMCc5iSaQ8TvSOOZUnJ+skkeNBswiTArr73n3SiD28IHzniMFWbls4pX8HElPaOnXeIvTMQr+FtSunpT5JxO7fBS+Fl+6xVRxSta4JUw5B6+xSFe0QavhUES+aiMbNt40QHvchQvPirD0knO9khkvKKbnL/1Ehmv6IVPAYF+hvqGjZp++ELy+C1YbqDXlT74TAlb+UwGyP+3g3KTYrTymQyS/yRiufKZeE0iEfGKIfp7heDrQWLiFfwm+O60Rs613GKxWPKIbyG+IL61xh4kAAAAAElFTkSuQmCC');
+                background-size: 14px 14px;
+                border: 1px solid var(--co-color-gray-400);
+                transition: all 150ms ease-out;
+                outline: none;
+                &:checked {
+                    background-position: 50% 50%;
+                }
+            }
+        }
+
+        // selects
+        .twikbot-dropdown {
+            width: 100%;
+            background: white;
+            border: 1px solid var(--co-color-gray-400);
+            border-radius: 0;
+        }
+
+        // file uploader
+        .twikbot-button {
+            display: block;
+            border: 1px solid var(--co-color-gray-400);
+            padding: 10px;
+            background: white;
+            .twikbot-upload {
+                width: 100%;
+                display: block;
+            }
+        }
+
+        // pickers
+        .twikbot-parameter-picker {
+            .twikbot-label-value {
+                display: none;
+            }
+        }
+        .twikbot-picker {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .twikbot-picker-option {
+                display: flex;
+                cursor: pointer;
+                border: 1px solid var(--co-color-gray-300);
+                &:hover {
+                    border-color: var(--co-color-gray-400);
+                }
+                &.twikbot-active {
+                    border-color: var(--co-color-gray-500);
+                }
+                .twikbot-picker-option-image {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

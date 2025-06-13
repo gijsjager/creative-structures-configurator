@@ -1,0 +1,47 @@
+.co-configurator-area-buttons,
+.co-configurator-camera-buttons {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+
+  @include desktop {
+    bottom: 30px;
+    right: 30px;
+  }
+
+  button {
+    background: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: var(--co-color-text);
+    border: 1px solid var(--co-color-gray-300);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 8px;
+    outline: none;
+
+    &:hover {
+      color: var(--co-color-text);
+      background: var(--co-color-gray-300)
+    }
+
+    &.active {
+      background-color: var(--co-color-gray-500);
+      border-color: var(--co-color-gray-600);
+      color: white;
+    }
+  }
+}
+
+.co-configurator-area-buttons {
+  right: auto;
+  left: 30px;
+  display: none;
+  @include desktop {
+    display: flex;
+  }
+}

@@ -1,0 +1,78 @@
+:root {
+    --co-color-gray-300: #f5f5f5;
+    --co-color-gray-400: #B2B2B2;
+    --co-color-gray-500: #575756;
+    --co-color-gray-600: #1D1D1B;
+    --co-color-text: #787878;
+}
+
+@import "helpers";
+
+.co-configurator-wrapper {
+    width: 100%;
+    background: white;
+    flex-wrap: wrap;
+    display: flex;
+    color: var(--co-color-text);
+    @include desktop {
+        flex-wrap: nowrap;
+    }
+
+    .form-control {
+        color: var(--co-color-text);
+    }
+}
+
+.co-configurator-canvas-holder {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include desktop {
+        width: auto;
+    }
+
+    #co-configurator-canvas {
+        height: 25vh;
+        @include desktop {
+            height: 615px;
+        }
+        canvas {
+            width: 100% !important;
+        }
+
+        &.co-configurator-canvas-sticky canvas {
+            width: calc(100% - 30px) !important;
+            position: fixed;
+            top: 0;
+            left: 15px;
+            right: 15px;
+            z-index: 10000;
+        }
+    }
+}
+
+#co-configurator-message,
+#co-configurator-ui {
+    position: relative;
+    background: var(--co-color-gray-300);
+    overflow: auto;
+    width: 100%;
+    flex-shrink: 0;
+    height: auto;
+    @include desktop {
+        width: 400px;
+        height: 760px;
+    }
+}
+
+#co-configurator-submit {
+    padding: 25px;
+}
+
+@import "elements/products";
+@import "elements/breadcrumbs";
+@import "elements/parameter";
+@import "elements/message";
+@import "elements/camera_buttons";
+@import "elements/tooltips";
