@@ -403,12 +403,15 @@
 
 .co-configurator-area-buttons {
   right: auto;
-  left: 30px;
-  display: none;
+  left: 10px;
+  top: 10px;
+  bottom: auto;
+  display: flex;
 }
 @media screen and (min-width: 1024px) {
   .co-configurator-area-buttons {
-    display: flex;
+    left: 30px;
+    bottom: 30px;
   }
 }
 
