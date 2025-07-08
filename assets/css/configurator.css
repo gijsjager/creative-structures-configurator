@@ -79,6 +79,7 @@
   justify-content: center;
   margin-bottom: 25px;
   gap: 10px;
+  background: white;
   overflow-x: auto;
 }
 @media screen and (min-width: 1024px) {
@@ -97,6 +98,7 @@
   flex-shrink: 0;
   width: 100px;
   position: relative;
+  border-radius: 0;
 }
 @media screen and (min-width: 1024px) {
   #co-configurator-products .co-configurator-product {

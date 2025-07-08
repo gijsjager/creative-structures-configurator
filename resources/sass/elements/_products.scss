@@ -3,7 +3,7 @@
   justify-content: center;
   margin-bottom: 25px;
   gap: 10px;
-
+  background: white;
   overflow-x: auto;
   @include desktop() {
     overflow: visible;
@@ -20,6 +20,7 @@
     flex-shrink: 0;
     width: 100px;
     position: relative;
+    border-radius: 0;
     @include desktop() {
       width: auto;
       flex-shrink: 1;
