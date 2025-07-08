@@ -121,14 +121,6 @@ add_action('admin_init', function () {
         );
     }
 
-    // add settings per category
-    $categories = [
-        'type' => 'Type',
-        'sidewalls' => 'Sidewalls',
-        'color' => 'Color',
-        'branding' => 'Branding',
-    ];
-
     add_settings_section(
         'co_categories_section',
         'Category Settings',
@@ -138,14 +130,23 @@ add_action('admin_init', function () {
         'cs-configurator'
     );
 
-    foreach($categories as $key => $label) {
+    global $csConfiguratorCategories;
+    foreach($csConfiguratorCategories as $key => $label) {
         register_setting('co_settings_group', "co_{$key}_info");
         add_settings_field(
             "co_{$key}_info",
             $label,
             function () use ($key, $label) {
-                $info = esc_attr(get_option("co_{$key}_info", ''));
-                echo "<textarea name='co_{$key}_info' />{$info}</textarea>";
+                wp_editor(
+                    get_option("co_{$key}_info", ''),
+                    "co_{$key}_info",
+                    [
+                        'textarea_name' => "co_{$key}_info",
+                        'textarea_rows' => 5,
+                        'media_buttons' => true,
+                    ]
+                );
+
             },
             'cs-configurator',
             'co_categories_section' // Use the section ID here

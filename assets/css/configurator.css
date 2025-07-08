@@ -412,6 +412,7 @@
   .co-configurator-area-buttons {
     left: 30px;
     bottom: 30px;
+    top: auto;
   }
 }
 

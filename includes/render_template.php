@@ -5,6 +5,8 @@
 
 function show_configurator($atts = []) {
 
+    global $csConfiguratorCategories;
+
     // extract the settings from the options
     $items = [
         'lounger_medium' => 'Lounger Medium',
@@ -13,12 +15,6 @@ function show_configurator($atts = []) {
         'crossover_large' => 'Crossover Large',
         'hexadome_medium' => 'Hexadome Medium',
         'hexadome_large' => 'Hexadome Large',
-    ];
-    $categories = [
-        'type' => 'Type',
-        'sidewalls' => 'Sidewalls',
-        'color' => 'Color',
-        'branding' => 'Branding',
     ];
 
     $config = [];
@@ -32,8 +28,8 @@ function show_configurator($atts = []) {
     }
 
     $categoryTooltips = [];
-    foreach ($categories as $key => $label) {
-        $categoryTooltips[$key] = get_option("co_{$key}_info", []);
+    foreach ($csConfiguratorCategories as $key => $label) {
+        $categoryTooltips[$key] = apply_filters('the_content', get_option("co_{$key}_info", []));
     }
 
     // support ID attribute

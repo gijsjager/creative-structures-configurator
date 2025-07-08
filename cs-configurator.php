@@ -15,8 +15,8 @@ define('CO_CONFIGURATOR_CSS', plugin_dir_url(__FILE__) . 'assets/css/');
 define('CO_CONFIGURATOR_IMG', plugin_dir_url(__FILE__) . 'assets/img/');
 define('CO_CONFIGURATOR_PATH', plugin_dir_path(__FILE__));
 
-
 include CO_CONFIGURATOR_PATH . 'includes/helpers.php';
+include CO_CONFIGURATOR_PATH . 'includes/constants.php';
 
 /**
  * Add shortcut

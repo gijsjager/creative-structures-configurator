@@ -372,17 +372,21 @@ if (typeof coProductKey !== 'undefined') {
         const categories = document.querySelectorAll('.twikbot-parameter-group-title');
         Array.from(categories).forEach(category => {
             const str = category.innerText.toLowerCase();
+            console.log(coCategoryTooltips);
             const tooltipText = coCategoryTooltips[str] ? coCategoryTooltips[str] : '';
             if (tooltipText !== '') {
                 const tooltip = document.createElement('span');
                 tooltip.classList.add('co-configurator-category-tooltip');
-                tooltip.setAttribute('data-tippy-content', tooltipText);
                 tooltip.innerText = 'i';
                 category.appendChild(tooltip);
+
+                tippy(tooltip, {
+                    content: tooltipText,
+                    allowHTML: true,
+                });
             }
         });
 
-        tippy('[data-tippy-content]');
     }
 
     async function generatePDF(order) {
